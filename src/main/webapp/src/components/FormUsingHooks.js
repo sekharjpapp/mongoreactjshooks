@@ -34,7 +34,7 @@ const FormUsingHooks = () => {
         </div> :null}
         
         <div className='form-group'>
-          <label for='exampleInputEmail1'>Firstname</label>
+          <label htmlFor='exampleInputEmail1'>Firstname</label>
           <input
             onChange={handleFirstNameInputChange}
             value={values.firstname}
@@ -48,7 +48,7 @@ const FormUsingHooks = () => {
           {submitted && !values.firstname ? <span>Please Enter a FirstName</span> : null}
         </div>
         <div className='form-group'>
-          <label for='exampleInputEmail1'>Lastname</label>
+          <label htmlFor='exampleInputEmail1'>Lastname</label>
           <input
             onChange={handleLastNameInputChange}
             type='text'
@@ -62,7 +62,7 @@ const FormUsingHooks = () => {
            {submitted && !values.lastname ? <span>Please Enter a lastname</span> : null}
         </div>
         <div className='form-group'>
-          <label for='exampleInputEmail1'>Email address</label>
+          <label htmlFor='exampleInputEmail1'>Email address</label>
           <input
             onChange={handleMailInputChange}
             type='email'
@@ -75,7 +75,7 @@ const FormUsingHooks = () => {
           />
           {submitted && !values.email ? <span>Please Enter a Email</span> : null}
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>
   );

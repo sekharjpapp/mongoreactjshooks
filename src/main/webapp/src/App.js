@@ -6,6 +6,7 @@ import Blogs from './components/Blogs';
 import Showhide from './components/Showhide';
 import Mainlayout from './components/Mainlayout';
 import FormUsingHooks from './components/FormUsingHooks';
+import AddStudent from './components/AddStudent';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/mainlayout' element={<Mainlayout />} />
           <Route path='/formUsingHooks' element={<FormUsingHooks />} />
+          <Route path='/addStudent' element={<AddStudent />} />
         </Route>
       </Routes>
       

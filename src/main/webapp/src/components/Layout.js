@@ -21,6 +21,9 @@ const Layout = () => {
         <li className="nav-item">
           <Link to="/formUsingHooks">FormUsingHooks</Link>
         </li>
+        <li className="nav-item">
+          <Link to="/addStudent">AddStudent</Link>
+        </li>
         
       </ul>
     </nav>

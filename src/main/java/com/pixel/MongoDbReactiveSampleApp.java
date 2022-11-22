@@ -50,13 +50,13 @@ public class MongoDbReactiveSampleApp {
 		var bookFlux = Flux.range(1, 5)
 				.map(i -> new Book(i, "book Name" + i, "Author Name" + i));
 		bookFlux.subscribe(log::info);
-		var studentNames = Flux.range(1, 5)
+		/*var studentNames = Flux.range(1, 5)
 				.map(e -> new Student(null, "Student firstName " + e, "Student lastnameName "+e))
 				.flatMap(this.studentRepository::save);
 		this.studentRepository.deleteAll()
 				.thenMany(studentNames)
 				.thenMany(this.studentRepository.findAll())
-				.subscribe(log::info);
+				.subscribe(log::info);*/
 		Book book = new Book();
 		book.setBookName("Scala");
 		book.setAuthorName("Martin Odersky");
