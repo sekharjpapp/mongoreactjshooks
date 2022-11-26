@@ -24,6 +24,9 @@ const Layout = () => {
         <li className="nav-item">
           <Link to="/addStudent">AddStudent</Link>
         </li>
+        <li className="nav-item">
+          <Link to="/contextapiA">SampleContextApi</Link>
+        </li>
         
       </ul>
     </nav>

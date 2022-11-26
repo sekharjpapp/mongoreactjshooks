@@ -1,13 +1,7 @@
 package com.pixel;
 
-import com.pixel.entity.Book;
-import com.pixel.entity.Reservation;
-import com.pixel.entity.Student;
-import com.pixel.entity.Task;
-import com.pixel.repository.BookRepository;
-import com.pixel.repository.ReservationRepository;
-import com.pixel.repository.StudentRepository;
-import com.pixel.repository.TaskRepository;
+import com.pixel.entity.*;
+import com.pixel.repository.*;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -34,6 +28,9 @@ public class MongoDbReactiveSampleApp {
 	@Autowired
 	private TaskRepository taskRepository;
 
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
 	public static void main(String[] args) {
 		SpringApplication.run(MongoDbReactiveSampleApp.class, args);
 	}
@@ -57,6 +54,11 @@ public class MongoDbReactiveSampleApp {
 				.thenMany(studentNames)
 				.thenMany(this.studentRepository.findAll())
 				.subscribe(log::info);*/
+		employeeRepository.deleteAll();
+		var employeeStream = Flux.range(1, 10)
+				.map(i -> new Employee(null, "name " + i, "firstName " + i, i, "IT " + i))
+				.flatMap(this.employeeRepository::save);
+		employeeStream.subscribe(log::info);
 		Book book = new Book();
 		book.setBookName("Scala");
 		book.setAuthorName("Martin Odersky");
